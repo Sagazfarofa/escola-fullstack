@@ -1,0 +1,472 @@
+/* ========================================================
+   HERO - SISTEMA ESCOLAR SESI MIRANDÓPOLIS
+   Dark theme + glassmorphism + gradientes indigo/roxo,
+   seguindo a mesma identidade visual do header.
+======================================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    min-height: 88vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 120px 24px;
+
+    background: #05070f;
+    color: #f1f5f9;
+    text-align: center;
+}
+
+/* --------------------------------------------------------
+   FUNDO — glow radial + grade sutil
+-------------------------------------------------------- */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    z-index: -2;
+
+    background:
+        radial-gradient(700px circle at 20% 20%, rgba(99, 102, 241, 0.28), transparent 60%),
+        radial-gradient(700px circle at 80% 30%, rgba(168, 85, 247, 0.22), transparent 60%),
+        radial-gradient(900px circle at 50% 100%, rgba(139, 92, 246, 0.18), transparent 60%);
+
+    filter: blur(10px);
+    animation: hero-drift 18s ease-in-out infinite alternate;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 42px 42px;
+
+    mask-image: radial-gradient(circle at 50% 30%, black, transparent 75%);
+}
+
+@keyframes hero-drift {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    100% { transform: translate3d(2%, -2%, 0) scale(1.05); }
+}
+
+/* --------------------------------------------------------
+   SELO / BADGE
+-------------------------------------------------------- */
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 18px;
+    margin-bottom: 28px;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #c7d2fe;
+
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    border-radius: 999px;
+
+    backdrop-filter: blur(10px);
+    animation: hero-fade-up 0.8s ease both;
+}
+
+.hero-badge::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    background: #34d399;
+    box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.18);
+}
+
+/* --------------------------------------------------------
+   TÍTULO
+-------------------------------------------------------- */
+
+.hero h2 {
+    margin: 0 0 22px;
+
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+
+    animation: hero-fade-up 0.8s ease 0.1s both;
+}
+
+.hero h2 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #818cf8,
+        #c084fc
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-size: 200% auto;
+    animation: hero-shine 6s linear infinite;
+}
+
+@keyframes hero-shine {
+    to { background-position: 200% center; }
+}
+
+/* --------------------------------------------------------
+   PARÁGRAFO
+-------------------------------------------------------- */
+
+.hero p {
+    max-width: 620px;
+    margin: 0 auto 40px;
+
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    line-height: 1.7;
+    color: #94a3b8;
+
+    animation: hero-fade-up 0.8s ease 0.2s both;
+}
+
+/* --------------------------------------------------------
+   AÇÕES (botões)
+-------------------------------------------------------- */
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    animation: hero-fade-up 0.8s ease 0.3s both;
+}
+
+.hero-btn {
+    position: relative;
+    overflow: hidden;
+
+    padding: 14px 30px;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    white-space: nowrap;
+
+    border-radius: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-btn-primary {
+    color: #05070f;
+
+    background: linear-gradient(135deg, #a5b4fc, #d8b4fe);
+
+    box-shadow: 0 14px 35px rgba(139, 92, 246, 0.35);
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 45px rgba(139, 92, 246, 0.5);
+}
+
+.hero-btn-secondary {
+    color: #e2e8f0;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+}
+
+.hero-btn-secondary:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --------------------------------------------------------
+   MÉTRICAS / DESTAQUES
+-------------------------------------------------------- */
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+
+    margin-top: 72px;
+    padding-top: 40px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    animation: hero-fade-up 0.8s ease 0.4s both;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.hero-stat strong {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+
+    background: linear-gradient(135deg, #ffffff, #94a3b8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-stat span {
+    font-size: 13px;
+    color: #64748b;
+    letter-spacing: 0.3px;
+}
+
+/* --------------------------------------------------------
+   ANIMAÇÃO DE ENTRADA
+-------------------------------------------------------- */
+
+@keyframes hero-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --------------------------------------------------------
+   RESPONSIVO
+-------------------------------------------------------- */
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 90px 20px;
+        min-height: auto;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-stats {
+        gap: 28px;
+        margin-top: 48px;
+    }
+}
+/* ================================
+   LINK ATIVO
+================================ */
+
+.nav a.active {
+    color: white;
+
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.nav a.active::after {
+    transform: scaleX(1);
+}
+
+
+/* ================================
+   BOTÃO HAMBÚRGUER (mobile)
+================================ */
+
+.menu-toggle {
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    width: 40px;
+    height: 40px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 22px;
+    height: 2px;
+
+    background: #e2e8f0;
+    border-radius: 2px;
+
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ================================
+   RESPONSIVO — MENU MOBILE
+================================ */
+
+@media (max-width: 1000px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.3s ease;
+    }
+
+    .nav.nav-open {
+        max-height: 400px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+        padding: 10px 0 20px;
+    }
+
+    .nav a {
+        text-align: center;
+    }
+} 
+
+/* ================================
+   LINK ATIVO
+================================ */
+
+.nav a.active {
+    color: white;
+
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.nav a.active::after {
+    transform: scaleX(1);
+}
+
+
+/* ================================
+   BOTÃO HAMBÚRGUER (mobile)
+================================ */
+
+.menu-toggle {
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    width: 40px;
+    height: 40px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 22px;
+    height: 2px;
+
+    background: #e2e8f0;
+    border-radius: 2px;
+
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ================================
+   RESPONSIVO — MENU MOBILE
+================================ */
+
+@media (max-width: 1000px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.3s ease;
+    }
+
+    .nav.nav-open {
+        max-height: 400px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+        padding: 10px 0 20px;
+    }
+
+    .nav a {
+        text-align: center;
+    }
+}

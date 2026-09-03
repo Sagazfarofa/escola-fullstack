@@ -1,0 +1,165 @@
+/* Página Cadastrar Notas */
+main {
+    min-height: calc(100vh - 80px);
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.form-notas {
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto 50px;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #1f2937;
+    background: #f9fafb;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+.form-notas button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form-notas button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.form-notas button:active {
+    transform: translateY(0);
+}
+
+/* Tabela de Notas Cadastradas */
+table {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto 50px;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+thead {
+    background: #111827;
+    color: white;
+}
+
+thead th {
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tbody td {
+    padding: 14px 16px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 15px;
+    color: #374151;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+tbody tr:hover {
+    background: #eef2ff;
+    transition: 0.2s;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 24px;
+        margin-top: 25px;
+    }
+
+    .form-notas {
+        width: 85%;
+        padding: 25px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        width: 95%;
+    }
+
+    thead th, tbody td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+}

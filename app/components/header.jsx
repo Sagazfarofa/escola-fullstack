@@ -9,8 +9,8 @@ const NAV_ITEMS = [
     { href: "/", label: "Início" },
     { href: "/cadaluno", label: "Cadastrar Aluno" },
     { href: "/listaluno", label: "Lista de Alunos" },
-    { href: "/notaluno", label: "Cadastrar Notas" },
-    { href: "/listnota", label: "Lista de Notas" },
+    { href: "/alunonota", label: "Cadastrar Notas" },
+    { href: "/listanota", label: "Lista de Notas" },
 ];
 
 export default function Header() {

@@ -85,6 +85,30 @@ form button:active {
     transform: translateY(0);
 }
 
+/* Alertas */
+.mensagem {
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.mensagem.sucesso {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.mensagem.erro {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
 /* Responsividade */
 @media (max-width: 600px) {
     h2 {
@@ -97,3 +121,4 @@ form button:active {
         padding: 25px;
     }
 }
+

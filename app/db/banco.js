@@ -5,7 +5,7 @@ const db = new DataBase("./app/db/escola.db");
 db.pragma("foreign_keys = ON");// Habilita chave estrangeira
 
 db.exec(`
-    CREAT TABLE IF NOT EXISTS alunos (
+    CREATE TABLE IF NOT EXISTS alunos (
       id_aluno INTEGER PRIMARY KEY AUTOINCREMENT,
       nome_aluno TEXT NOT NULL,
       idade INTEGER NOT NULL,
@@ -15,7 +15,7 @@ db.exec(`
     `);
 
     db.exec(`
-    CREAT TABLE IF NOT EXISTS notas (
+    CREATE TABLE IF NOT EXISTS notas (
       id_nota INTEGER PRIMARY KEY AUTOINCREMENT,
       id_aluno INTEGER NOT NULL UNIQUE,
       t1 REAL NOT NULL,
@@ -30,4 +30,5 @@ db.exec(`
     console.log('Banco de dados criado com sucesso!');
 
     export default db;
+
 
